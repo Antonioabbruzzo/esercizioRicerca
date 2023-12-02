@@ -1,0 +1,19 @@
+<div class="container">
+  <h3 class="text-center">Cerca quello che ti serve</h3>
+  <form #form="ngForm" class="my-4" (ngSubmit)="save(form.value)">
+
+    <div class="my-2">
+      <label class="my-2">Fai una ricerca nelle tue email</label>
+      <input class="form-control" type="number" [(ngModel)]="emailId" name="id" (ngModelChange)="findEmail($event)">
+      <small class="text-danger">N.B Gli id delle tue email vanno da 9991 a 99923</small>
+      <pre>{{showEmaIl|json}}</pre>
+    </div>
+    <div class="my-2">
+      <label class="my-2">Fai una ricerca nei tweets dei tuoi conoscenti</label>
+      <input type="number" [(ngModel)]="tweetId" name="id" class="form-control" (ngModelChange)="findTweet($event)">
+      <small class="text-danger">N.B Gli id dei tue tweets vanno da 1 a 4</small>
+      <pre>{{showTweet|json}}</pre>
+    </div>
+
+  </form>
+</div>
