@@ -14,6 +14,17 @@
       <small class="text-danger">N.B Gli id dei tue tweets vanno da 1 a 4</small>
       <pre>{{showTweet|json}}</pre>
     </div>
+    <div class="my-2">
+      <label class="my-2">Fai una ricerca nel tuo estratto conto</label>
+      <input type="string" [(ngModel)]="spesaCausual" name="id" class="form-control"
+        (ngModelChange)="findSpesa($event)">
+      <h5 class="text-center"> Ecco le spese presenti nel tuo estratto conto</h5>
+      <div class="container" style="display: grid;" *ngFor="let item of spesaList">
+
+        <p class="text-center">{{item.causal}}</p>
+      </div>
+      <pre>{{showSpesa|json}}</pre>
+    </div>
 
   </form>
 </div>
